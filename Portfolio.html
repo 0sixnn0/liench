@@ -1,1 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>En-Cheng Liou | Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans TC", Arial, sans-serif;
+      line-height: 1.7;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1d4ed8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.96rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #1d4ed8;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb, #60a5fa);
+      color: white;
+      padding: 80px 20px 60px;
+    }
+
+    .hero-container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      opacity: 0.96;
+    }
+
+    .hero p {
+      max-width: 780px;
+      font-size: 1rem;
+      margin-bottom: 22px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 1.5px solid rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      color: white;
+      font-weight: 700;
+    }
+
+    .hero-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    section {
+      padding: 72px 20px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #1d4ed8;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      color: #6b7280;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    .portfolio-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    .portfolio-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      display: grid;
+      grid-template-columns: 1.05fr 1.2fr;
+      transition: 0.25s;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .portfolio-image {
+      min-height: 280px;
+      background: #dbeafe;
+    }
+
+    .portfolio-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .portfolio-content {
+      padding: 28px;
+    }
+
+    .portfolio-year {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #2563eb;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .portfolio-content h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .portfolio-content p {
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+
+    .journal-grid,
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .journal-card,
+    .industry-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      transition: 0.25s;
+    }
+
+    .journal-card:hover,
+    .industry-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card-image {
+      height: 220px;
+      background: #e5e7eb;
+    }
+
+    .card-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .card-body h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .card-body p {
+      color: #4b5563;
+      font-size: 0.96rem;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 999px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      margin-bottom: 12px;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 24px;
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 24px 20px;
+    }
+
+    @media (max-width: 980px) {
+      .portfolio-card {
+        grid-template-columns: 1fr;
+      }
+
+      .journal-grid,
+      .industry-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Portfolio</div>
+      <div class="nav-links">
+        <a href="#awards">得獎紀錄</a>
+        <a href="#journals">學術期刊與雜誌</a>
+        <a href="#industry">產學合作</a>
+        <a href="index.html">返回首頁</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-container">
+      <h1>作品集</h1>
+      <h2>得獎紀錄、學術成果與產學合作經驗</h2>
+      <p>
+        本頁整理我在智慧製造、自動化產線、AI 視覺辨識、CNC 系統整合與研究發表方面的成果，
+        包含全國競賽得獎、期刊與雜誌刊登，以及參與產學合作計畫的實作經驗。
+      </p>
+      <a class="hero-btn" href="index.html">返回首頁</a>
+    </div>
+  </header>
+
+  <section id="awards">
+    <div class="container">
+      <h2 class="section-title">得獎紀錄</h2>
+      <p class="section-subtitle">競賽成果與專題實作表現</p>
+
+      <div class="portfolio-list">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="images/award1.jpg" alt="AI 智動化設備創作獎得獎照片">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2024</span>
+            <h3>全國大專院校 AI 智動化設備創作獎｜第一名</h3>
+            <p>
+              作品名稱：<span class="highlight">千噸鍛造震四海，蟻群智導行天下</span>
+            </p>
+            <p>
+              結合貝葉斯最佳化與螞蟻群演算法，建立智慧化潤滑噴塗路徑規劃系統，
+              可自動生成最佳路徑並即時調整參數。
+            </p>
+            <p>
+              在高溫高速鍛造條件下，能耗降低約 <span class="highlight">21.5%</span>，
+              材料使用率提升約 <span class="highlight">27.4%</span>。
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="images/award2.jpg" alt="全國技專校院學生實務專題製作競賽得獎照片">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2025</span>
+            <h3>全國技專校院學生實務專題競賽｜第二名</h3>
+            <p>
+              作品名稱：<span class="highlight">貝葉斯優化於蟻群演算法應用於自動化鍛造噴塗路徑規劃中</span>
+            </p>
+            <p>
+              透過智慧化噴塗路徑生成與控制參數最佳化，有效提升製程穩定性與表面品質，
+              並展現智慧製造之實務應用成果。
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="images/award3.jpg" alt="TSPE 精密工程專題與論文獎照片">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2025</span>
+            <h3>TSPE 精密工程專題與論文獎｜銅獎</h3>
+            <p>
+              作品名稱：<span class="highlight">亮面工件隨機夾取：基於增強式合成資料與深度學習點雲補全</span>
+            </p>
+            <p>
+              研究聚焦於亮面工件辨識、點雲補全與隨機夾取技術，
+              提升視覺辨識與自動抓取系統之穩定性與精度。
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="images/award4.jpg" alt="AI 賦能與智慧製造應用競賽得獎照片">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2025</span>
+            <h3>AI 賦能與智慧製造應用競賽｜第一名</h3>
+            <p>
+              作品名稱：<span class="highlight">運用 Nvidia Omniverse 與點雲資料補全之亮面套筒隨機取放系統</span>
+            </p>
+            <p>
+              結合 NVIDIA Omniverse、YOLO-seg、3D 反投影與 PCN 重建，
+              有效改善反光造成的點雲缺失。
+            </p>
+            <p>
+              模型精度提升約 <span class="highlight">9–10%</span>、3D 分割 IoU 提升約
+              <span class="highlight">11%</span>，背景雜訊降低 <span class="highlight">72%</span>。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journals">
+    <div class="container">
+      <h2 class="section-title">學術期刊與雜誌</h2>
+      <p class="section-subtitle">研究成果、技術文章與投稿紀錄</p>
+
+      <div class="journal-grid">
+        <div class="journal-card">
+          <div class="card-image">
+            <img src="images/journal1.jpg" alt="機械工業雜誌相關圖片">
+          </div>
+          <div class="card-body">
+            <span class="tag">國內期刊 / 雜誌</span>
+            <h3>基於 Omniverse 優化 CNC 加工後的纏屑處理</h3>
+            <p>刊登於《機械工業雜誌》第 506 期（2025 年 5 月）</p>
+            <p>
+              以 NVIDIA Omniverse 建立 CNC 加工纏屑之數位雙生環境，
+              結合強化學習與 YOLO 辨識模型，辨識準確率超過 90%，
+              有效降低停機頻率並提升刀具壽命與加工品質。
+            </p>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="card-image">
+            <img src="images/journal2.jpg" alt="機器人振動控制研究圖表">
+          </div>
+          <div class="card-body">
+            <span class="tag">SCI 期刊</span>
+            <h3>High-Speed Robotic Manipulator Vibration Control</h3>
+            <p>Journal of Chinese Society of Mechanical Engineers（2025 accepted）</p>
+            <p>
+              結合 B-Spline 軌跡規劃與 L-BFGS-B 最佳化，
+              將平均定位誤差由 27.68 mm 降至 7.52 mm，
+              並縮短執行時間約 12%。
+            </p>
+          </div>
+        </div>
+
+        <div class="journal-card">
+          <div class="card-image">
+            <img src="images/journal3.jpg" alt="Sensors and Materials 期刊封面">
+          </div>
+          <div class="card-body">
+            <span class="tag">SCI 期刊</span>
+            <h3>YOLO-based CNC Chip Detection</h3>
+            <p>Sensors and Materials, Vol. 37, No. 11 (2025)</p>
+            <p>
+              利用 Omniverse 自動生成並標註切屑影像，以合成資料訓練 YOLO 模型，
+              提升辨識穩定性與準確度，並獲選為當期期刊封面。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <section id="industry">
+  <div class="container">
+    <h2 class="section-title">產學合作</h2>
+    <p class="section-subtitle">研究實作、系統整合與智慧製造應用</p>
+
+    <div class="industry-grid">
+      <div class="industry-card">
+        <div class="card-image">
+          <img src="images/industry1.jpg" alt="松讚 CNC 自動化產線完工合影">
+        </div>
+        <div class="card-body">
+          <span class="tag">產學合作計畫</span>
+          <h3>松讚實業 — CNC 智慧彈性製造系統建置計畫</h3>
+          <p>
+            與松讚實業股份有限公司、日本諏訪東京理科大學合作，
+            將機械手臂自動上下料、夾具設計與通訊整合導入企業產線。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <a class="back-home" href="index.html">← 返回首頁</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 En-Cheng Liou. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
