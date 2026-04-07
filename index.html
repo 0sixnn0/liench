@@ -1,7 +1,490 @@
-姓名
-自我介紹
-學歷
-技能
-專案或作品
-聯絡方式
-GitHub 連結
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>En-Cheng Liou | 個人履歷網站</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans TC", Arial, sans-serif;
+      line-height: 1.6;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1d4ed8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #1d4ed8;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1d4ed8, #2563eb, #60a5fa);
+      color: white;
+      padding: 80px 20px 60px;
+    }
+
+    .hero-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-text h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      margin-bottom: 22px;
+      max-width: 700px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.25s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #1d4ed8;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-outline {
+      border: 1.5px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 18px;
+      padding: 28px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.85);
+      margin-bottom: 16px;
+      background: white;
+    }
+
+    .hero-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .hero-card p {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #1d4ed8;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .projects-grid,
+    .contact-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .card p,
+    .card li {
+      color: #4b5563;
+      font-size: 0.97rem;
+    }
+
+    .skill-list li,
+    .info-list li {
+      margin-bottom: 8px;
+      padding-left: 6px;
+    }
+
+    .project-card a {
+      color: #1d4ed8;
+      font-weight: bold;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline-item {
+      background: white;
+      border-left: 5px solid #2563eb;
+      padding: 20px 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .timeline-item span {
+      display: inline-block;
+      color: #2563eb;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .contact-card strong {
+      color: #111827;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 24px 20px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-container,
+      .about-grid,
+      .skills-grid,
+      .projects-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.3rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">My CV</div>
+      <div class="nav-links">
+        <a href="#about">關於我</a>
+        <a href="#education">學歷</a>
+        <a href="#skills">技能</a>
+        <a href="#projects">作品</a>
+        <a href="#contact">聯絡方式</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>En-Cheng Liou</h1>
+        <h2>學生｜個人履歷網站｜GitHub Pages × Cloudflare DNS</h2>
+        <p>
+          你好，我是 En-Cheng Liou，正在學習網頁設計、GitHub Pages 部署與 DNS 網域設定。
+          我對前端網頁開發、介面設計與數位作品展示很有興趣，這個網站是我的個人履歷與作品集。
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#projects">查看作品</a>
+          <a class="btn btn-outline" href="#contact">聯絡我</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img
+          class="avatar"
+          src="https://via.placeholder.com/300x300.png?text=My+Photo"
+          alt="個人照片"
+        />
+        <h3>基本資料</h3>
+        <p>姓名：En-Cheng Liou</p>
+        <p>身分：學生</p>
+        <p>興趣：網頁設計、前端開發、部署上線</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">關於我</h2>
+      <p class="section-subtitle">簡單介紹我的背景、目標與學習方向</p>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>自我介紹</h3>
+          <p>
+            我是一位正在學習資訊相關技能的學生，近期專注於 HTML、CSS、GitHub Pages、
+            Cloudflare DNS 與網站部署流程。希望能逐步累積前端開發與作品展示經驗。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>個人特質</h3>
+          <ul class="info-list">
+            <li>願意主動學習新技術</li>
+            <li>對網頁排版與視覺設計有興趣</li>
+            <li>能一步一步完成技術設定與除錯</li>
+            <li>樂於把抽象概念整理成實作成果</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">學歷與經歷</h2>
+      <p class="section-subtitle">可放學校、科系、學習經歷或社團經驗</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>202X - 現在</span>
+          <h3>OO學校 OO科系</h3>
+          <p>學習資訊相關課程，接觸網頁設計、程式撰寫與數位工具應用。</p>
+        </div>
+
+        <div class="timeline-item">
+          <span>202X</span>
+          <h3>個人履歷網站製作</h3>
+          <p>完成 GitHub Pages 部署、自訂網域設定、Cloudflare DNS 與 HTTPS 啟用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">技能</h2>
+      <p class="section-subtitle">可以放你會的工具、語言、平台</p>
+
+      <div class="skills-grid">
+        <div class="card">
+          <h3>前端技術</h3>
+          <ul class="skill-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>基礎 JavaScript</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>部署與工具</h3>
+          <ul class="skill-list">
+            <li>GitHub</li>
+            <li>GitHub Pages</li>
+            <li>Cloudflare DNS</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>其他能力</h3>
+          <ul class="skill-list">
+            <li>版面設計</li>
+            <li>網頁內容整理</li>
+            <li>基礎除錯能力</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">作品與專案</h2>
+      <p class="section-subtitle">把你做過的作業、專題或作品放在這裡</p>
+
+      <div class="projects-grid">
+        <div class="card project-card">
+          <h3>個人履歷網站</h3>
+          <p>
+            使用 HTML、CSS 製作單頁式個人履歷網站，並部署到 GitHub Pages，
+            再透過 Cloudflare 綁定自訂網域。
+          </p>
+          <p><a href="#">查看網站</a></p>
+        </div>
+
+        <div class="card project-card">
+          <h3>課堂作業展示</h3>
+          <p>
+            可放課堂中完成的網頁、報告或其他數位成果，作為個人作品集的一部分。
+          </p>
+          <p><a href="#">查看內容</a></p>
+        </div>
+
+        <div class="card project-card">
+          <h3>GitHub Repository</h3>
+          <p>
+            把你的程式碼、網站原始檔與其他專案都整理在 GitHub 上，方便展示與管理。
+          </p>
+          <p><a href="https://github.com/" target="_blank">前往 GitHub</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">聯絡方式</h2>
+      <p class="section-subtitle">讓老師或其他人能找到你</p>
+
+      <div class="contact-grid">
+        <div class="card contact-card">
+          <h3>Email</h3>
+          <p><strong>yourmail@example.com</strong></p>
+        </div>
+
+        <div class="card contact-card">
+          <h3>GitHub</h3>
+          <p><strong>github.com/你的帳號</strong></p>
+        </div>
+
+        <div class="card contact-card">
+          <h3>網站</h3>
+          <p><strong>liench.dpdns.org</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 En-Cheng Liou. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
