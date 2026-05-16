@@ -159,6 +159,18 @@
       object-fit: cover;
     }
 
+    .portfolio-image.certificate-image,
+    .card-image.certificate-image {
+      background: #ffffff;
+    }
+
+    .portfolio-image.certificate-image img,
+    .card-image.certificate-image img {
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+    }
+
     .portfolio-content {
       padding: 28px;
     }
@@ -188,6 +200,7 @@
     }
 
     .journal-grid,
+    .conference-grid,
     .industry-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -195,6 +208,7 @@
     }
 
     .journal-card,
+    .conference-card,
     .industry-card {
       background: white;
       border-radius: 18px;
@@ -204,6 +218,7 @@
     }
 
     .journal-card:hover,
+    .conference-card:hover,
     .industry-card:hover {
       transform: translateY(-4px);
     }
@@ -265,6 +280,7 @@
       }
 
       .journal-grid,
+      .conference-grid,
       .industry-grid {
         grid-template-columns: 1fr;
       }
@@ -286,6 +302,8 @@
       <div class="nav-links">
         <a href="#awards">得獎紀錄</a>
         <a href="#journals">學術期刊與雜誌</a>
+        <a href="#conference">研討會</a>
+        <a href="#exchange">國際交流</a>
         <a href="#industry">產學合作</a>
         <a href="index.html">返回首頁</a>
       </div>
@@ -295,10 +313,10 @@
   <header class="hero">
     <div class="hero-container">
       <h1>作品集</h1>
-      <h2>得獎紀錄、學術成果與產學合作經驗</h2>
+      <h2>得獎紀錄、學術成果、研討會、國際交流與產學合作經驗</h2>
       <p>
         本頁整理我在智慧製造、自動化產線、AI 視覺辨識、CNC 系統整合與研究發表方面的成果，
-        包含全國競賽得獎、期刊與雜誌刊登，以及參與產學合作計畫的實作經驗。
+        包含全國競賽得獎、期刊與雜誌刊登、研討會發表、國際交流，以及參與產學合作計畫的實作經驗。
       </p>
       <a class="hero-btn" href="index.html">返回首頁</a>
     </div>
@@ -385,6 +403,45 @@
             </p>
           </div>
         </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image certificate-image">
+            <img src="images/award5.jpg"" alt="ISME 2026 最佳論文獎證書">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2026</span>
+            <h3>台灣機電工程國際學會 115 年度全國學術研討會｜最佳論文獎</h3>
+            <p>
+              論文題目：<span class="highlight">亮面金屬套筒之整合式隨機抓取方法</span>
+            </p>
+            <p>
+              論文編號：<span class="highlight">ISME26-381</span>｜論壇組別：011. 智慧加工與產線自動化論壇
+            </p>
+            <p>
+              作者：林恩妮、劉恩承、林忠潔、彭達仁
+            </p>
+            <p>
+              參加 ISME 2026 論壇論文競賽組別，榮獲 <span class="highlight">最佳論文獎</span>。
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="images/award6.jpg" alt="2026 全國技專校院學生實務專題製作競賽暨成果展第一名合照">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2026</span>
+            <h3>2026 全國技專校院學生實務專題製作競賽暨成果展｜第一名</h3>
+            <p>
+              作品名稱：<span class="highlight">融合 2D–3D 感知與 Omniverse 強化資料之亮面手工具智慧夾取系統</span>
+            </p>
+            <p>
+              結合 2D 影像辨識、3D 點雲感知與 Omniverse 強化資料，建立亮面手工具智慧夾取系統，
+              強化反光物件之辨識、定位與夾取穩定性。
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -438,6 +495,75 @@
             <p>
               利用 Omniverse 自動生成並標註切屑影像，以合成資料訓練 YOLO 模型，
               提升辨識穩定性與準確度，並獲選為當期期刊封面。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="conference">
+    <div class="container">
+      <h2 class="section-title">研討會</h2>
+      <p class="section-subtitle">學術研討會參與與論文發表紀錄</p>
+
+      <div class="conference-grid">
+        <div class="conference-card">
+          <div class="card-image certificate-image">
+            <img src="images/ISME26-381_page-0001.jpg" alt="ISME 2026 研討會參加證書 ISME26-381">
+          </div>
+          <div class="card-body">
+            <span class="tag">國內學術研討會</span>
+            <h3>亮面金屬套筒之整合式隨機抓取方法</h3>
+            <p>台灣機電工程國際學會 115 年度全國學術研討會｜ISME 2026</p>
+            <p>論文編號：<span class="highlight">ISME26-381</span></p>
+            <p>作者：林恩妮、劉恩承、林忠潔、彭達仁</p>
+            <p>此篇論文同時榮獲論壇論文競賽組別 <span class="highlight">最佳論文獎</span>。</p>
+            <p>地點：國立聯合大學，苗栗市，台灣｜日期：2026 年 5 月 8–9 日</p>
+          </div>
+        </div>
+
+        <div class="conference-card">
+          <div class="card-image certificate-image">
+            <img src="images/ISME26-406_page-0001.jpg" alt="ISME 2026 研討會參加證書 ISME26-406">
+          </div>
+          <div class="card-body">
+            <span class="tag">國內學術研討會</span>
+            <h3>結合協作型機器人與力回饋控制之軸承自動化組裝研究</h3>
+            <p>台灣機電工程國際學會 115 年度全國學術研討會｜ISME 2026</p>
+            <p>論文編號：<span class="highlight">ISME26-406</span></p>
+            <p>作者：李翊丞、林恩妮、劉恩承、林忠潔、彭達仁</p>
+            <p>地點：國立聯合大學，苗栗市，台灣｜日期：2026 年 5 月 8–9 日</p>
+          </div>
+        </div>
+     </div>
+    </div>
+  </section>
+
+
+  <section id="exchange">
+    <div class="container">
+      <h2 class="section-title">國際交流</h2>
+      <p class="section-subtitle">海外交流、課程參與與跨文化學習經驗</p>
+
+      <div class="portfolio-list">
+        <div class="portfolio-card">
+          <div class="portfolio-image certificate-image">
+            <img src="images/sakura-science-2025.jpg" alt="SAKURA SCIENCE Exchange Program 國際交流證書">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2025.02</span>
+            <h3>日本諏訪大學 SAKURA SCIENCE Exchange Program 國際交流</h3>
+            <p>
+              赴日本諏訪大學參加 SAKURA SCIENCE Exchange Program，進行國際交流與課程學習，
+              拓展跨文化溝通、國際視野與專業領域交流經驗。
+            </p>
+            <p>
+              課程期間：<span class="highlight">2025 年 2 月 11 日至 2 月 17 日</span>
+            </p>
+            <p>
+              透過海外課程與師生交流，累積智慧製造、工程應用與國際合作相關學習經驗，
+              並獲得 SAKURA SCIENCE Exchange Program 結業證書。
             </p>
           </div>
         </div>
