@@ -201,7 +201,8 @@
 
     .journal-grid,
     .conference-grid,
-    .industry-grid {
+    .industry-grid,
+    .exhibition-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
@@ -209,7 +210,8 @@
 
     .journal-card,
     .conference-card,
-    .industry-card {
+    .industry-card,
+    .exhibition-card {
       background: white;
       border-radius: 18px;
       overflow: hidden;
@@ -219,7 +221,8 @@
 
     .journal-card:hover,
     .conference-card:hover,
-    .industry-card:hover {
+    .industry-card:hover,
+    .exhibition-card:hover {
       transform: translateY(-4px);
     }
 
@@ -281,7 +284,8 @@
 
       .journal-grid,
       .conference-grid,
-      .industry-grid {
+      .industry-grid,
+      .exhibition-grid {
         grid-template-columns: 1fr;
       }
 
@@ -301,6 +305,7 @@
       <div class="logo">Portfolio</div>
       <div class="nav-links">
         <a href="#awards">得獎紀錄</a>
+        <a href="#exhibitions">展覽經歷</a>
         <a href="#journals">學術期刊與雜誌</a>
         <a href="#conference">研討會</a>
         <a href="#exchange">國際交流</a>
@@ -313,10 +318,10 @@
   <header class="hero">
     <div class="hero-container">
       <h1>作品集</h1>
-      <h2>得獎紀錄、學術成果、研討會、國際交流與產學合作經驗</h2>
+      <h2>得獎紀錄、展覽經歷、學術成果、研討會、國際交流與產學合作經驗</h2>
       <p>
         本頁整理我在智慧製造、自動化產線、AI 視覺辨識、CNC 系統整合與研究發表方面的成果，
-        包含全國競賽得獎、期刊與雜誌刊登、研討會發表、國際交流，以及參與產學合作計畫的實作經驗。
+        包含全國競賽得獎、展覽參與、期刊與雜誌刊登、研討會發表、國際交流，以及參與產學合作計畫的實作經驗。
       </p>
       <a class="hero-btn" href="index.html">返回首頁</a>
     </div>
@@ -440,6 +445,73 @@
               結合 2D 影像辨識、3D 點雲感知與 Omniverse 強化資料，建立亮面手工具智慧夾取系統，
               強化反光物件之辨識、定位與夾取穩定性。
             </p>
+          </div>
+        </div>
+
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="images/award7.jpg" alt="勤益科大國際發明展校代表徵選第二名">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2026.05.14</span>
+            <h3>勤益科大國際發明展校代表徵選｜第二名</h3>
+            <p>參與校內國際發明展代表徵選，榮獲 <span class="highlight">第二名</span>。</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="images/award8.jpg" alt="2026 智慧製造人才培育計畫工具機領域 PBL 實作專題競賽第二名">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2026.05.29</span>
+            <h3>2026 智慧製造人才培育計畫工具機領域 PBL 實作專題競賽｜第二名</h3>
+            <p>參與工具機領域 PBL 實作專題競賽，榮獲 <span class="highlight">第二名</span>。</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <img src="images/award9.jpg" alt="2026 第二屆三菱電機智慧自動化創新實作競賽第一名">
+          </div>
+          <div class="portfolio-content">
+            <span class="portfolio-year">2026.07.22</span>
+            <h3>2026 第二屆三菱電機智慧自動化創新實作競賽｜第一名</h3>
+            <p>參與智慧自動化創新實作競賽，榮獲 <span class="highlight">第一名</span>。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="exhibitions">
+    <div class="container">
+      <h2 class="section-title">展覽經歷</h2>
+      <p class="section-subtitle">技術成果展示與產業交流經驗</p>
+
+      <div class="exhibition-grid">
+        <div class="exhibition-card">
+          <div class="card-image">
+            <img src="images/exhibition1.jpg" alt="2024 南港展覽館自動化展">
+          </div>
+          <div class="card-body">
+            <span class="tag">展覽</span>
+            <h3>2024 南港展覽館自動化展</h3>
+            <p>展覽日期：<span class="highlight">2024/08/21－2024/08/24</span></p>
+            <p>地點：南港展覽館</p>
+          </div>
+        </div>
+
+        <div class="exhibition-card">
+          <div class="card-image">
+            <img src="images/exhibition2.jpg" alt="2025 南港展覽館自動化展">
+          </div>
+          <div class="card-body">
+            <span class="tag">展覽</span>
+            <h3>2025 南港展覽館自動化展</h3>
+            <p>展覽日期：<span class="highlight">2025/08/20－2025/08/23</span></p>
+            <p>地點：南港展覽館</p>
           </div>
         </div>
       </div>
